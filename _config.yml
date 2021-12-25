@@ -31,7 +31,7 @@ twitter_username: solimlegris
 github_username:  alephg
 
 # Build settings
-theme: minima
+theme: bay_jekyll_theme
 plugins:
   - jekyll-feed
 
