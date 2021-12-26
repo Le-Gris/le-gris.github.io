@@ -38,7 +38,8 @@ footer:
       link: http://linkedin.com/in/solim-legris
     - name: GitHub
       link: http://github.com/alephg
-
+collections:
+  - projects
 # Build settings
 remote_theme: eliottvincent/bay
 #theme: bay_jekyll_theme
