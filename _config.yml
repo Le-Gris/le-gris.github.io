@@ -39,7 +39,7 @@ footer:
     - name: GitHub
       link: http://github.com/alephg
 
-url: https://solimlegris.com
+url: https://alephg.github.io
 # Build settings
 remote_theme: eliottvincent/bay
 #theme: bay_jekyll_theme
