@@ -2,7 +2,8 @@
 layout: post
 title:  "La science paradigmatique"
 date:   2020-12-28 12:20:26 -0500
-description: Une science qui hésite à oublier ses fondateurs est condamnée.
+blurb: Une science qui hésite à oublier ses fondateurs est condamnée.
+author: Solim LeGris
 categories: francais
 ---
 
