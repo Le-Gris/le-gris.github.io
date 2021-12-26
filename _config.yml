@@ -41,7 +41,7 @@ footer:
 
 # Build settings
 remote_theme: eliottvincent/bay
-theme: bay_jekyll_theme
+#theme: bay_jekyll_theme
 markdown: kramdown
 sass:
   style: :compressed
