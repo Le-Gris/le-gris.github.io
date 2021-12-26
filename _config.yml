@@ -40,7 +40,8 @@ footer:
       link: http://github.com/alephg
 
 # Build settings
-theme: bay_jekyll_theme
+#theme: bay_jekyll_theme
+remote_theme: eliottvincent/bay
 markdown: kramdown
 sass:
   style: :compressed
