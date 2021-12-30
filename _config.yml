@@ -29,7 +29,7 @@ footer:
   contact:
     - name: Email
       value: solimlegris[AT]gmail[DOT]com
-      link: mailto:solimlegris@gmail.com
+      #link: mailto:solimlegris@gmail.com
   follow:
     - name: Twitter
       link: http://twitter.com/solimlegris
