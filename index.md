@@ -5,7 +5,7 @@ profile_picture:
   alt: website picture
 ---
 
-Hi! I'm a recent graduate from McGill University's Cognitive Science program in the neuroscience concentration with a minor in Computer Science. I am specifically interested in computational cognitive science: developing computational hypotheses potentially explaining mechanisms of the mind and human intelligence. I am aiming to start graduate school studies to pursue my research interests in the Fall of 2022.
+Hi! I'm a recent graduate from McGill University's Cognitive Science program in the neuroscience concentration with a minor in Computer Science. I am specifically interested in computational cognitive science: developing computational hypotheses potentially explaining mechanisms of human minds and intelligence. I am aiming to start graduate school studies to pursue my research interests in the Fall of 2022.
 
 [//]: # (I will soon be starting a research/data science intership at === where I will be adressing questions about neurodegeneration and neuroinflammation in diseased brains.) 
 
