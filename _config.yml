@@ -24,6 +24,7 @@ header:
       slug: / # <-- index.md
     - name: Projects # <-- projects.md
     - name: Blog # <-- blog.md
+    - name: Reading List # <-- reading list.md
 footer:
   show_powered_by: false
   contact:
