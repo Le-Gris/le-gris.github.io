@@ -27,15 +27,20 @@ Here is a series of books I have read, some of which I think are must-reads, som
 *Homo Deus: A Brief History of Tomorrow* (Yuval Noah Harari)
 > I was not too impressed by this book despite the hugely positive press coverage it has received. Most of it is speculative, as futurist-leaning books tend to be. Humans tend to be very bad at predicting the future precisely over relatively large time scales. And that's true whether the human doing the predicting is an expert or a layperson. One thing worth mentioning of Harari's thought is that over-arching narratives are central to human societies. They tend to guide our everyday actions, how we organize our societies and what things we value. Part of shaping a better future for humanity involves carefully and collectively reinventing our narratives so as to avoid the many potential pitfalls and catastrophic endings that don't seem so easily avoidable.  
 
+*The Making of a Counter Culture: Reflections on the Technocratic Society and Its Youthful Opposition* (Theodore Roszak)
+>
+
+
+
 ### Computer Science
 
 *Our Final Invention* (James Barrat)
-> At the time I was reading this, I was taking a sabbatical year before starting my bachelor's degree. I already had a strong interest in AI and was curious what this book had to say about it. I think it turned me off about AI research and development. I wasn't sure if contributing to the invention of "the end of humanity" was something I wanted to do. Although the book does bring forth legitimate criticism of AI research and tries to shed some light on the potential dangers of artificial general intelligence (AGI), now having a deeper understanding of state-of-the-art machine learning systems, most of the fears that the author expresses seem a bit overblown and far-fetched. It is in the same vein as the all too popular fears that Elon Musk has been expressing with regards to AI. I think that one of the main mistakes that proponents of this current of thought make is that they confound intelligence, agency and human desires. Anthromorphizing yet to be invented machines can definitely bring one to think about AGI as potentially very dangerous. It is essentially projecting the image of the evil genius onto these machines but to me it is not so clear that an intelligent machine must have desires of its own in a human sense or any agency at all that is not restricted to what it has been designed to do. Very intelligent machines such as AGI may just be very good at solving problems that we are very bad at solving, only when asked to solve them. 
+> At the time I was reading this, I was taking a sabbatical year before starting my bachelor's degree. I already had a strong interest in AI and was curious what this book had to say about it. I think it turned me off about AI research and development. I wasn't sure if contributing to the invention of "the end of humanity" was something I wanted to do. Although the book does bring forth legitimate criticism of AI research and tries to shed some light on the potential dangers of artificial general intelligence (AGI), now having a deeper understanding of state-of-the-art machine learning systems, most of the fears that the author expresses seem a bit overblown and far-fetched. His claims are in the same vein as the all too popular fears that Elon Musk has been expressing with regards to AI. I think that one of the main mistakes that proponents of this current of thought make is that they confound intelligence, agency and human desires. Anthromorphizing yet to be invented machines can definitely bring one to think about AGI as potentially very dangerous. It is essentially a projection of the  "evil genius" onto these machines but to me it is not so clear that an intelligent machine must have desires of its own in a human sense or any agency at all that is not restricted to what it has been designed to do. Very intelligent machines such as AGI may just be very good at solving problems that we are very bad at solving, only when asked to solve them. 
 
 ### Fiction
 
 *Fear and Trembling* (Amélie Nothomb)
-> I read this in French, so I can't vouch for translations but I was quite amazed by the virtuosity with which it was written! It is short, deep and has a kafkaesque touch to it that is unmistakable.  
+> I read this in French, so I can't vouch for translations but I was quite amazed by the virtuosity with which it was written! It is short, deep and has a kafkaesque flavor to it that is unmistakable.  
 
 *The Stranger* (Albert Camus)
 
@@ -59,10 +64,10 @@ Here is a series of books I have read, some of which I think are must-reads, som
 >
 
 *When Nieztsche Wept* (Irvin D. Yalom)
-> This is one of my favorite books of all times. Being an amateur fan of Nietzschean philosophy, this is a great way to learn more about the life of Nieztsche and his philosophy. It is expertly written and you really get out of it feeling like you had a momentary glimpse into one of the greatest minds of philosophy.
+> This is one of my favorite books of all times. Being an amateur reader of Nietzschean philosophy, I found that this was a great way to learn more about the life of Nieztsche and his philosophy. It is expertly written and you really get out of it feeling like you had a momentary glimpse into one of the greatest minds of philosophy.
 
 *The Three Musketeers* (Alexandre Dumas)
 
-*The Count of Monte-Cristo* (Alexandre Duman)
-> One of the first classics of French literature that I ever read during my teenage years. It is a book very dear to me as it was offered to me by my father. I remember reading it during a three day roadtrip and I couldn't keep my eyes off of it. It was at the time that I was transitioning from avid reading of comic books to reading more dense "adult" literature. Definitely recommend! 
+*The Count of Monte-Cristo* (Alexandre Dumas)
+> One of the first classics of French literature that I read during my early teenage years. It is a book very dear to me as it was offered to me by my father. I remember reading it during a three day roadtrip and I couldn't keep my eyes off of it. It was at the time that I was transitioning from avid reading of comic books to reading more dense "adult" literature. The Count of Monte-Cristo is the quintessential story of revenge and it ends beautifully. Definitely recommend! 
 
