@@ -9,6 +9,6 @@ Hi! I'm a recent graduate from McGill University's Cognitive Science program in 
 
 [//]: # (I will soon be starting a research/data science intership at === where I will be adressing questions about neurodegeneration and neuroinflammation in diseased brains.) 
 
-Other than that, I like [music](https://soundcloud.com/solim-legris), running, [reading]({% link readings.md %}),  writing about stuff I find interesting and enoying great food!
+Other than that, I like [music](https://soundcloud.com/solim-legris), running, [reading]({% link readings.md %}),  writing about stuff I find interesting and enjoying great food!
 
 Here is my [resume](/assets/resume/latest-cv.pdf).

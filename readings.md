@@ -66,6 +66,8 @@ Here is a series of books I have read, some of which I think are must-reads, som
 *When Nieztsche Wept* (Irvin D. Yalom)
 > This is one of my favorite books of all times. Being an amateur reader of Nietzschean philosophy, I found that this was a great way to learn more about the life of Nieztsche and his philosophy. It is expertly written and you really get out of it feeling like you had a momentary glimpse into one of the greatest minds of philosophy.
 
+*Slaughterhouse-Five* (Kurt Vonnegut)
+
 *The Three Musketeers* (Alexandre Dumas)
 
 *The Count of Monte-Cristo* (Alexandre Dumas)
