@@ -15,6 +15,31 @@ Here is a series of books I have read, some of which I think are must-reads, som
 *The Myth of Sisyphus* (Albert Camus)
 >
 
+*Civilization and its Discontents* (Sigmund Freud)
+
+*The Archetypes and the Collective Unconscious* (Carl Gustav Jung)
+>
+
+*The Gay Science* (Friedrich Nietszhe)
+>
+
+*And Thus Spake Zarathoustra* (Friedrich Nietzsche)
+>
+
+*Global Burnout* (Pascal Chabot)
+>
+
+*Depression and Philosophy* (Robert Redeker)
+>
+
+*Science and the Common Understanding* (Robert Oppenheimer)
+>
+
+*The Structure of Scientific Revolutions* (Thomas Kuhn)
+>
+
+*The Politics of Experience* (Ronald D. Laing)
+>
 ### History
 
 *Guns, Germs and Steel* (Jared Diamond)
@@ -30,8 +55,6 @@ Here is a series of books I have read, some of which I think are must-reads, som
 *The Making of a Counter Culture: Reflections on the Technocratic Society and Its Youthful Opposition* (Theodore Roszak)
 >
 
-
-
 ### Computer Science
 
 *Our Final Invention* (James Barrat)
@@ -42,9 +65,13 @@ Here is a series of books I have read, some of which I think are must-reads, som
 *Fear and Trembling* (Amélie Nothomb)
 > I read this in French, so I can't vouch for translations but I was quite amazed by the virtuosity with which it was written! It is short, deep and has a kafkaesque flavor to it that is unmistakable.  
 
+*Une vie divine* (Phillipe Sollers)
+
 *The Stranger* (Albert Camus)
 
 *The Castle* (Franz Kafka)
+
+*2666* (Roberto Bolano)
 
 *The God Formula* (José Rodrigues Dos Santos)
 > I can't say that I feel like this book was a great work of fiction. The writing wasn't spectacular nor was the storyline. What was spectacular though was the weaving of all these different and fascinating ideas from quantum physics to Taoism and philosophy. It also does a good job of piquing one's curiosity for these subjects in a light and easy to read way.
