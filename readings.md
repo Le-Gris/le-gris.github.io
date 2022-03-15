@@ -40,6 +40,7 @@ Here is a non-exhaustive series of books I have read, some of which I think are 
 
 *The Politics of Experience* (Ronald D. Laing)
 >
+
 ### History
 
 *Guns, Germs and Steel* (Jared Diamond)
