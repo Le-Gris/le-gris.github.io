@@ -2,7 +2,7 @@
 title: Reading List
 layout: work
 ---
-Here is a series of books I have read, some of which I think are must-reads, some with comments and criticisms.
+Here is a non-exhaustive series of books I have read, some of which I think are must-reads, some with comments and criticisms.
 
 ### Philosophy
 
