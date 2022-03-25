@@ -46,3 +46,6 @@ This post is definitely not an exhaustive list of how to improve or acquire skil
 
 [AI Expert Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap)
 
+[Homemade Machine Learning](https://github.com/trekhleb/homemade-machine-learning#machine-learning-map)
+
+[Machine Learning Experiments](https://github.com/trekhleb/machine-learning-experiments)
