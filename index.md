@@ -5,9 +5,7 @@ profile_picture:
   alt: website picture
 ---
 
-Hi! I'm a recent graduate from McGill University's Cognitive Science program in the neuroscience concentration with a minor in Computer Science. I am specifically interested in computational cognitive science: developing computational hypotheses potentially explaining mechanisms of human minds and intelligence. More generally, I am interested in research simultaneously contributing to expanding our understanding of cognition and developing more human-like AI systems. I will be joining the Human and Machine Learning Lab and the Computation and Cognition Lab at NYU as a PhD student in the Fall of 2022.
-
-[//]: # (I will soon be starting a research/data science intership at === where I will be adressing questions about neurodegeneration and neuroinflammation in diseased brains.) 
+Hi! I'm a recent graduate from McGill University's Cognitive Science program in the neuroscience concentration with a minor in Computer Science. I am specifically interested in computational cognitive science: developing computational hypotheses potentially explaining mechanisms of human minds and intelligence. More generally, I am interested in research simultaneously contributing to expanding our understanding of cognition and developing more human-like AI systems. I will be joining the [Human and Machine Learning Lab](https://lake-lab.github.io/) and the [Computation and Cognition Lab](http://gureckislab.org/) at NYU as a PhD student in the Fall of 2022.
 
 Other than that, I like [music](https://soundcloud.com/solim-legris), running, [reading]({% link readings.md %}),  writing about stuff I find interesting and enjoying great food!
 
