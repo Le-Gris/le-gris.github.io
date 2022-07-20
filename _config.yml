@@ -38,10 +38,10 @@ footer:
     - name: LinkedIn
       link: http://linkedin.com/in/solim-legris
     - name: GitHub
-      link: http://github.com/alephg
+      link: http://github.com/le-gris
 
 copyright: © Solim LeGris, 2021. All rights reserved.
-url: https://alephg.github.io
+url: https://le-gris.github.io
 
 # Build settings
 remote_theme: eliottvincent/bay
