@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -22,7 +22,7 @@ header:
   pages:
     - name: Home
       slug: / # <-- index.md
-    - name: Projects # <-- projects.md
+    - name: Research # <-- research.md
     - name: Blog # <-- blog.md
     - name: Readings # <-- readings.md
 footer:
@@ -34,13 +34,13 @@ footer:
   follow:
     - name: Twitter
       link: http://twitter.com/solimlegris
-      username: "@solimlegris"
+      username: '@solimlegris'
     - name: LinkedIn
       link: http://linkedin.com/in/solim-legris
     - name: GitHub
       link: http://github.com/le-gris
 
-copyright: © Solim LeGris, 2021. All rights reserved.
+copyright: © Solim LeGris, 2023. All rights reserved.
 url: https://le-gris.github.io
 
 # Build settings
@@ -61,13 +61,13 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-   - .sass-cache/
-   - .jekyll-cache/
-   - gemfiles/
-   - Gemfile
-   - Gemfile.lock
-   - node_modules/
-   - vendor/bundle/
-   - vendor/cache/
-   - vendor/gems/
-   - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
