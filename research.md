@@ -9,13 +9,14 @@ layout: work
 
 See the project webpage [here](https://arc-visualizations.github.io).
 
-\[[paper](/assets/papers/human-arc.pdf)\], \[[repo]()\], \[[arXiv]()\].
+\[[arXiv](https://arxiv.org/abs/2409.01374)\], \[[repo](https://github.com/Le-Gris/h-arc)\].
 
 ### Predicting insight during physical problem solving (2024)
 
 See a full reference page [here](https://gureckislab.org/papers/#/ref/legris2024physicalsolving).
-
 Try the game [here](https://exps.gureckislab.org/e/blue-gigantic-golf/#/).
+
+\[[paper](https://gureckislab.org/publications/legris2024physicalsolving-cogsci.pdf)\].
 
 ## Unpublished
 
