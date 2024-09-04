@@ -5,7 +5,7 @@ layout: work
 
 ## Publications
 
-### H-ARC: A Robust Estimate of Human Performance on the Abstraction and Reasoning Corpus (2024)
+### H-ARC: A Robust Estimate of Human Performance on the Abstraction and Reasoning Corpus Benchmark (2024)
 
 See the project webpage [here](https://arc-visualizations.github.io).
 
