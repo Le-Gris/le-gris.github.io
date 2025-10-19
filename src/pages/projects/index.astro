@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const title = 'Projects';
+const description = 'Research and creative projects by Solim LeGris.';
+const permalink = `${Astro.site.href}projects`;
+
+// Get all projects from the data directory
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => b.data.year - a.data.year);
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="projects">
+  <div class="container">
+    <h1>Projects</h1>
+    <p class="projects-intro">
+      A collection of projects I've worked on. 
+    </p>
+
+    <div class="projects-grid">
+      {sortedProjects.map((project) => (
+        <article class="project-card">
+          <div class="project-header">
+            <h2 class="project-title">
+              <a href={`/projects/${project.id}`}>{project.data.title}</a>
+            </h2>
+            <div class="project-meta">
+              <span class="project-year">{project.data.year}</span>
+              <span class="project-type">{project.data.type}</span>
+              <span class={`project-status status-${project.data.status.toLowerCase()}`}>
+                {project.data.status}
+              </span>
+            </div>
+          </div>
+          
+          <p class="project-description">{project.data.description}</p>
+          
+          <div class="project-tags">
+            {project.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          
+          <div class="project-links">
+            {project.data.links.slice(0, 2).map((link) => (
+              <a href={link.url} class="project-link" target="_blank" rel="noopener">
+                {link.name}
+              </a>
+            ))}
+            {project.data.links.length > 2 && (
+              <a href={`/projects/${project.id}`} class="project-link">
+                View Details →
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  .projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-header {
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .project-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .project-title a:hover {
+    color: var(--accent-color);
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-year {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .project-type {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+
+  .project-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .status-published {
+    background: var(--success-bg);
+    color: var(--success-text);
+  }
+
+  .status-unpublished {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+  }
+
+  .project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+      padding: 1rem;
+    }
+  }
+</style>

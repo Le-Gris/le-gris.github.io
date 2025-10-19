@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const readings = await getCollection('pages', ({ id }) => id === 'readings');
+const reading = readings[0];
+
+const title = reading.data.title;
+const description = reading.data.description;
+const permalink = `${Astro.site.href}readings`;
+const { Content } = await render(reading);
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="readings">
+  <div class="container">
+    <Content />
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: var(--color-text-accent);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5em;
+  }
+
+  h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+
+  h3 strong {
+    font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.5em 0 0 1em;
+    padding-left: 1em;
+    border-left: 3px solid var(--color-border);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  blockquote:empty {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5em;
+    }
+    
+    h3 {
+      font-size: 1em;
+    }
+  }
+</style>

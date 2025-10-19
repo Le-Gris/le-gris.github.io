@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About';
+const description = 'About Solim LeGris - PhD student at NYU in computational cognitive science.';
+const permalink = `${Astro.site.href}about`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="about">
+  <div class="container">
+    <h1>About</h1>
+    <figure class="about-image">
+      <img src="/assets/profile-pic.jpg" alt="Solim LeGris profile picture" width="330">
+    </figure>
+    <p>
+      Hi! I am currently a PhD student at NYU. I am a member of the 
+      <a href="https://lake-lab.github.io/">Human and Machine Intelligence Lab</a> 
+      at Princeton and the 
+      <a href="http://gureckislab.org/">Computation and Cognition Lab</a> 
+      at NYU, co-advised by Brenden Lake and Todd Gureckis.
+    </p>
+
+    <p>
+      I am broadly interested in computational cognitive 
+      science: developing computational hypotheses as testable explanations of the underlying 
+      mechanisms that support intelligence in people and machines. More specifically, my research aims to leverage
+      neurosymbolic models to design systems that exhibit more human-like intelligence. 
+    </p>
+
+    <p>
+      Previously, I completed my undergrad at McGill 
+      University in Cognitive Science and Computer Science, where I worked on category-learning difficulty and 
+      its relation to categorical perception using neural network simulations supervised by Stevan Harnad. 
+    </p>
+
+    <p>I like <a href="https://soundcloud.com/solim-legris">music</a>, 
+      bouldering, <a href="/readings">reading</a>, writing about stuff I find interesting 
+      and enjoying great food!</p>
+
+    <!-- <p>Here is my <a href="/assets/resume/latest-cv.pdf">resume</a>.</p> -->
+  </div>
+</BaseLayout>
+
+<style>
+  .about-image {
+    float: right;
+    margin: -3em -7em 2em 2em;
+    max-width: 300px;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 1020px) {
+    .about-image {
+      float: none;
+      margin: 0 auto 2em;
+    }
+  }
+</style>

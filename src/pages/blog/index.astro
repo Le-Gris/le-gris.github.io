@@ -1,0 +1,178 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Blog';
+const description = 'Latest articles.';
+const permalink = `${Astro.site.href}blog`;
+
+let allPosts = await getCollection('posts')
+allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+// Format dates to remove time
+allPosts = allPosts.map(post => ({
+  ...post,
+  data: {
+    ...post.data,
+    publishDate: new Date(post.data.publishDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
+}));
+
+// Get unique languages for filter
+const languages = [...new Set(allPosts.map(post => post.data.language))];
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="blog">
+  <div class="container">
+    <h1>Blog</h1>
+    
+    <!-- Language Filter -->
+    <div class="filter-container">
+      <!-- <span class="filter-label">Filter by language:</span> -->
+      <div class="language-filters">
+        <button class="language-filter active" data-language="all">all</button>
+        {languages.map(lang => (
+          <button class="language-filter" data-language={lang}>{lang}</button>
+        ))}
+      </div>
+    </div>
+
+    <div id="posts-container">
+      {allPosts.map((post, index) => {
+        const href = `/blog/${post.data.slug}`;
+        return (
+          <div class="post-item-wrapper" data-language={post.data.language}>
+            { index !== 0 && <hr /> }
+            <div class="post-item">
+              <h2>
+                <a href={href}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
+              <div class="post-item-footer">
+                <span class="post-item-date">— {post.data.publishDate}</span>
+                <span class="post-item-language">[{post.data.language.toUpperCase()}]</span>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  h2,
+  .post-item-footer {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+  }
+
+  .filter-container {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .filter-label {
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .language-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .language-filter {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+
+  .language-filter:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+  }
+
+  .language-filter.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .language-filter:not(:last-child)::after {
+    content: " | ";
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+  }
+
+  .post-item-date {
+    color: var(--text-secondary);
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 16px;
+  }
+
+  .post-item-language {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .post-item-wrapper {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .post-item-wrapper.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  hr {
+    margin: 60px auto;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.language-filter');
+    const postWrappers = document.querySelectorAll('.post-item-wrapper');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const selectedLanguage = this.getAttribute('data-language');
+        
+        // Update active state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter posts
+        postWrappers.forEach(wrapper => {
+          const postLanguage = wrapper.getAttribute('data-language');
+          
+          if (selectedLanguage === 'all' || postLanguage === selectedLanguage) {
+            wrapper.classList.remove('hidden');
+          } else {
+            wrapper.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

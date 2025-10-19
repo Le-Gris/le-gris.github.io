@@ -1,1 +1,3 @@
-# Personal Website
+# Personal webpage
+
+Built using Astro.
