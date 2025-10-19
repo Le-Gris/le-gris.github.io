@@ -161,141 +161,169 @@ const permalink = Astro.site.href;
 </style>
 
 <script>
-  const canvas = document.getElementById('generative-canvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d');
-  
-  let mouseX = 0;
-  let mouseY = 0;
-  let time = 0;
-  let particles = [];
-  
-  // Resize canvas to match container
-  function resizeCanvas() {
-    const container = canvas.parentElement;
-    const rect = container.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-  }
-  
-  // Initialize particles with mathematical distribution
-  function initParticles() {
-    particles = [];
-    const numParticles = 250;
+  function setupAnimation() {
+    const canvas = document.getElementById('generative-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
     
-    for (let i = 0; i < numParticles; i++) {
-      const angle = (i / numParticles) * Math.PI * 2;
-      const radius = 150 + Math.sin(angle * 3) * 60;
+    const ctx = canvas.getContext('2d');
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let time = 0;
+    let particles = [];
+    let animationId: number | null = null;
+    let resizeHandler: (() => void) | null = null;
+    let mouseMoveHandler: ((e: MouseEvent) => void) | null = null;
+    
+    // Resize canvas to match container
+    function resizeCanvas() {
+      const container = canvas.parentElement;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+    
+    // Initialize particles with mathematical distribution
+    function initParticles() {
+      particles = [];
+      const numParticles = 250;
       
-      particles.push({
-        x: canvas.width / 2 + Math.cos(angle) * radius,
-        y: canvas.height / 2 + Math.sin(angle) * radius,
-        baseX: canvas.width / 2 + Math.cos(angle) * radius,
-        baseY: canvas.height / 2 + Math.sin(angle) * radius,
-        angle: angle,
-        radius: radius,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.01 + Math.random() * 0.01,
-        size: 1 + Math.sin(angle * 2) * 0.5
+      for (let i = 0; i < numParticles; i++) {
+        const angle = (i / numParticles) * Math.PI * 2;
+        const radius = 150 + Math.sin(angle * 3) * 60;
+        
+        particles.push({
+          x: canvas.width / 2 + Math.cos(angle) * radius,
+          y: canvas.height / 2 + Math.sin(angle) * radius,
+          baseX: canvas.width / 2 + Math.cos(angle) * radius,
+          baseY: canvas.height / 2 + Math.sin(angle) * radius,
+          angle: angle,
+          radius: radius,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.01 + Math.random() * 0.01,
+          size: 1 + Math.sin(angle * 2) * 0.5
+        });
+      }
+    }
+    
+    function updateParticles() {
+      time += 0.01;
+      
+      particles.forEach((particle, index) => {
+        // Base circular motion with mathematical variation
+        particle.angle += particle.speed;
+        
+        // Add wave motion based on mathematical functions
+        const wave1 = Math.sin(particle.angle * 2 + time) * 45;
+        const wave2 = Math.cos(particle.angle * 3 + time * 1.5) * 25;
+        const wave3 = Math.sin(particle.phase + time * 2) * 15;
+        
+        // Mouse attraction with smooth falloff
+        const dx = mouseX - particle.baseX;
+        const dy = mouseY - particle.baseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const maxDistance = 200;
+        
+        let mouseInfluence = 0;
+        if (distance < maxDistance) {
+          mouseInfluence = (1 - distance / maxDistance) * 60;
+        }
+        
+        // Calculate final position
+        particle.x = particle.baseX + 
+          Math.cos(particle.angle) * (particle.radius + wave1 + wave2 + wave3) +
+          dx * mouseInfluence * 0.01;
+        particle.y = particle.baseY + 
+          Math.sin(particle.angle) * (particle.radius + wave1 + wave2 + wave3) +
+          dy * mouseInfluence * 0.01;
       });
     }
-  }
-  
-  function updateParticles() {
-    time += 0.01;
     
-    particles.forEach((particle, index) => {
-      // Base circular motion with mathematical variation
-      particle.angle += particle.speed;
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Add wave motion based on mathematical functions
-      const wave1 = Math.sin(particle.angle * 2 + time) * 45;
-      const wave2 = Math.cos(particle.angle * 3 + time * 1.5) * 25;
-      const wave3 = Math.sin(particle.phase + time * 2) * 15;
-      
-      // Mouse attraction with smooth falloff
-      const dx = mouseX - particle.baseX;
-      const dy = mouseY - particle.baseY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDistance = 200;
-      
-      let mouseInfluence = 0;
-      if (distance < maxDistance) {
-        mouseInfluence = (1 - distance / maxDistance) * 60;
-      }
-      
-      // Calculate final position
-      particle.x = particle.baseX + 
-        Math.cos(particle.angle) * (particle.radius + wave1 + wave2 + wave3) +
-        dx * mouseInfluence * 0.01;
-      particle.y = particle.baseY + 
-        Math.sin(particle.angle) * (particle.radius + wave1 + wave2 + wave3) +
-        dy * mouseInfluence * 0.01;
-    });
-  }
-  
-  function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw connections between nearby particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 150) {
-          const opacity = (1 - distance / 150) * 0.3;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+      // Draw connections between nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150) {
+            const opacity = (1 - distance / 150) * 0.3;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
         }
       }
+      
+      // Draw particles
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#000';
+        ctx.fill();
+      });
     }
     
-    // Draw particles
-    particles.forEach(particle => {
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      ctx.fillStyle = '#000';
-      ctx.fill();
-    });
-  }
-  
-  function animate() {
-    updateParticles();
-    drawParticles();
-    requestAnimationFrame(animate);
-  }
-  
-  // Check if animation is running
-  let animationRunning = false;
-  function startAnimation() {
-    if (!animationRunning) {
-      console.log('Starting animation...');
-      animationRunning = true;
-      animate();
+    function animate() {
+      updateParticles();
+      drawParticles();
+      animationId = requestAnimationFrame(animate);
     }
-  }
-  
-  // Mouse tracking
-  canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouseX = e.clientX - rect.left;
-    mouseY = e.clientY - rect.top;
-  });
-  
-  // Handle resize
-  window.addEventListener('resize', () => {
+    
+    // Mouse tracking
+    mouseMoveHandler = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+    canvas.addEventListener('mousemove', mouseMoveHandler);
+    
+    // Handle resize
+    resizeHandler = () => {
+      resizeCanvas();
+      initParticles();
+    };
+    window.addEventListener('resize', resizeHandler);
+    
+    // Initialize and start
     resizeCanvas();
     initParticles();
+    animate();
+    
+    // Cleanup function
+    return () => {
+      if (animationId !== null) {
+        cancelAnimationFrame(animationId);
+      }
+      if (resizeHandler) {
+        window.removeEventListener('resize', resizeHandler);
+      }
+      if (mouseMoveHandler) {
+        canvas.removeEventListener('mousemove', mouseMoveHandler);
+      }
+    };
+  }
+  
+  // Store cleanup function
+  let cleanup: (() => void) | null = null;
+  
+  // Initialize on page load (including view transitions)
+  document.addEventListener('astro:page-load', () => {
+    cleanup = setupAnimation();
   });
   
-  // Initialize
-  console.log('Initializing animation...');
-  resizeCanvas();
-  initParticles();
-  startAnimation();
+  // Cleanup before navigation
+  document.addEventListener('astro:before-preparation', () => {
+    if (cleanup) {
+      cleanup();
+      cleanup = null;
+    }
+  });
 </script>
