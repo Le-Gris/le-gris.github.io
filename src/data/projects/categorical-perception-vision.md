@@ -19,7 +19,7 @@ links:
     url: 'https://github.com/AlephG/cp-human-vision'
 ---
 
-## Overview
+<!-- ## Overview
 
 This computational neuroscience project explores categorical perception in human vision through the development and analysis of a biologically inspired computational model. The work replicates and extends findings from the original model developers, providing insights into how categorical perception emerges in visual processing.
 
@@ -39,7 +39,7 @@ The project involved implementing and analyzing a computational model of categor
 - Successful replication of original categorical perception results
 - Extension of the model to new experimental conditions
 - Insights into the computational basis of visual categorization
-- Open-source implementation for further research
+- Open-source implementation for further research -->
 
 ## Academic Context
 

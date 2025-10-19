@@ -19,7 +19,7 @@ links:
     url: 'https://github.com/AlephG/cp-complexity-model'
 ---
 
-## Overview
+<!-- ## Overview
 
 This honours research project explores the relationship between categorical perception and category-learning difficulty through computational modeling. The work investigates how different category structures and learning parameters affect the difficulty of category acquisition in both human and artificial systems.
 
@@ -39,7 +39,7 @@ The project involved developing a computational model that simulates category le
 - Development of a functional model of category-learning difficulty
 - Analysis of the relationship between categorical perception and learning
 - Computational insights into human category learning processes
-- Open-source implementation for further research
+- Open-source implementation for further research -->
 
 ## Academic Context
 

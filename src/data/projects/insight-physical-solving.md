@@ -21,7 +21,7 @@ links:
     url: 'https://gureckislab.org/publications/legris2024physicalsolving-cogsci.pdf'
 ---
 
-## Overview
+<!-- ## Overview
 
 This research investigates the cognitive processes underlying insight problem-solving through the development and analysis of a novel physical reasoning game. The study explores how humans approach complex spatial reasoning tasks and what factors predict successful insight moments.
 
@@ -45,4 +45,4 @@ The study uses a custom-designed physical reasoning game that presents participa
 
 ## Impact
 
-This work contributes to our understanding of human problem-solving and has implications for both cognitive science and artificial intelligence, particularly in developing more human-like reasoning systems.
+This work contributes to our understanding of human problem-solving and has implications for both cognitive science and artificial intelligence, particularly in developing more human-like reasoning systems. -->

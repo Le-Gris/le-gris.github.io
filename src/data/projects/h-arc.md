@@ -15,7 +15,7 @@ links:
     url: 'https://github.com/Le-Gris/h-arc'
 ---
 
-## Overview
+<!-- ## Overview
 
 This project presents H-ARC, a robust estimate of human performance on the Abstraction and Reasoning Corpus (ARC) benchmark. The ARC benchmark is designed to test artificial intelligence systems on tasks that require abstraction and reasoning capabilities similar to human cognition.
 
@@ -32,4 +32,4 @@ This work provides crucial baseline data for understanding human cognitive abili
 
 ## Technical Details
 
-The study involved extensive human subject testing to establish reliable performance benchmarks, with careful attention to experimental design and statistical analysis to ensure robust results.
+The study involved extensive human subject testing to establish reliable performance benchmarks, with careful attention to experimental design and statistical analysis to ensure robust results. -->
