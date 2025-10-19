@@ -10,6 +10,7 @@ export default defineConfig({
   site: 'https://solimlegris.com',
   base: '/',
   output: 'static',
+  trailingSlash: 'never',
   integrations: [mdx(), svelte()],
   markdown: {
     shikiConfig: {
